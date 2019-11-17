@@ -1,0 +1,10 @@
+node_modules/
+.cache/
+public/
+npm-debug.log
+.eslintcache
+.idea
+.DS_Store
+
+# Local Netlify folder
+.netlify
