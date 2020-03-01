@@ -2,7 +2,7 @@ const qs = require('qs');
 const UrlPattern = require('url-pattern');
 const Staticman = require('staticman/lib/Staticman');
 
-const pattern = new UrlPattern('/.netlify/functions/staticman/:username/:repository/:branch/:property');
+const pattern = new UrlPattern('/.netlify/functions/staticman/:username/:repository/:branch/:property(/)');
 
 exports.handler = (event, context, callback) => {
   const urlParams = pattern.match(event.path);
