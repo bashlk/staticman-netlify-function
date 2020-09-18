@@ -26,6 +26,10 @@ exports.handler = (event, context, callback) => {
       body: 'Success',
     });
   }).catch((error) => {
-    callback(error);
+      console.log(error);
+      callback(error, {
+          statusCode: 500,
+          body: JSON.stringify(error)
+      });
   });
 };
