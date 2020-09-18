@@ -21,15 +21,34 @@ exports.handler = (event, context, callback) => {
   const options = body.options || {};
 
   staticman.processEntry(body.fields, options).then(() => {
-    callback(null, {
-      statusCode: 200,
-      body: 'Success',
-    });
-  }).catch((error) => {
-      console.log(error);
-      callback(error, {
-          statusCode: 500,
-          body: JSON.stringify(error)
+    if (options.redirect) {
+      callback(null, {
+        statusCode: 303,
+        headers: {
+          Location: options.redirect
+        }
       });
+    } else {
+      callback(null, {
+        statusCode: 200,
+        body: 'Success',
+      });
+    }
   });
+}).catch ((error) => {
+  console.log(error);
+  if (options.redirectError) {
+    callback(null, {
+      statusCode: 303,
+      headers: {
+        Location: options.redirectError
+      }
+    });
+  } else {
+    callback(error, {
+      statusCode: 500,
+      body: JSON.stringify(error)
+    });
+  }
+});
 };
