@@ -23,7 +23,7 @@ Simple wrapper around [Staticman](https://staticman.net/) that allows it to be h
 {
     "scripts": {
         //  existing scripts
-        "postinstall": "cd functions/staticman && yarn"
+        "postinstall": "cd functions/staticman && yarn --production"
     }
 }
 ```
