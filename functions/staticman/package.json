@@ -9,5 +9,8 @@
     "qs": "^6.9.1",
     "staticman": "eduardoboucas/staticman#2be29f7",
     "url-pattern": "^1.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0"
   }
 }
