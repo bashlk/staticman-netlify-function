@@ -34,21 +34,20 @@ exports.handler = (event, context, callback) => {
         body: 'Success',
       });
     }
+  }).catch((error) => {
+    console.log(error);
+    if (options.redirectError) {
+      callback(null, {
+        statusCode: 303,
+        headers: {
+          Location: options.redirectError
+        }
+      });
+    } else {
+      callback(error, {
+        statusCode: 500,
+        body: JSON.stringify(error)
+      });
+    }
   });
-}).catch ((error) => {
-  console.log(error);
-  if (options.redirectError) {
-    callback(null, {
-      statusCode: 303,
-      headers: {
-        Location: options.redirectError
-      }
-    });
-  } else {
-    callback(error, {
-      statusCode: 500,
-      body: JSON.stringify(error)
-    });
-  }
-});
 };
