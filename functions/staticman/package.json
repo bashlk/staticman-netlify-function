@@ -4,7 +4,7 @@
   "description": "Staticman with netlify functions",
   "main": "index.js",
   "author": "Prabashwara Seneviratne",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "qs": "^6.9.1",
     "staticman": "eduardoboucas/staticman#2be29f7",
