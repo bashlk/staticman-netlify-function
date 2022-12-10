@@ -6,7 +6,7 @@
   "author": "Prabashwara Seneviratne",
   "license": "MIT",
   "dependencies": {
-    "qs": "^6.9.1",
+    "qs": "^6.9.7",
     "staticman": "eduardoboucas/staticman#2be29f7",
     "url-pattern": "^1.0.3"
   },
